@@ -96,7 +96,7 @@ exports.editGuest = async (req, res, next) => {
   guest.name = name;
   guest.allowedPlusses = allowedPlusses;
   guest.plusses = plusses;
-  // console.log(guest);
+  console.log(guest);
 
   guest = await guest.save();
   res.status(200).json({
