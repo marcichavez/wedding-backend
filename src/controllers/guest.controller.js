@@ -47,35 +47,35 @@ exports.getGuestsStats = async (req, res, next) => {
   var stats = {
     totalInvitation: (
       await GuestSchema.aggregate(GUEST_STATS_PIPELINES.TOTAL_INVITATIONS)
-    )[0].total,
+    )[0]?.total,
 
     totalNegativeResponse: (
       await GuestSchema.aggregate(GUEST_STATS_PIPELINES.TOTAL_NEGATIVE_RESPONSE)
-    )[0].total,
+    )[0]?.total,
 
     totalPositiveResponse: (
       await GuestSchema.aggregate(GUEST_STATS_PIPELINES.TOTAL_POSITIVE_RESPONSE)
-    )[0].total,
+    )[0]?.total,
 
     totalPendingResponse: (
       await GuestSchema.aggregate(GUEST_STATS_PIPELINES.TOTAL_PENDING_RESPONSE)
-    )[0].total,
+    )[0]?.total,
 
     totalAllocatedSeat: (
       await GuestSchema.aggregate(GUEST_STATS_PIPELINES.TOTAL_ALLOCATED_SEATS)
-    )[0].total,
+    )[0]?.total,
 
     totalConfirmedSeat: (
       await GuestSchema.aggregate(GUEST_STATS_PIPELINES.TOTAL_CONFIRMED_SEATS)
-    )[0].total,
+    )[0]?.total,
 
     totalConfirmedKids: (
       await GuestSchema.aggregate(GUEST_STATS_PIPELINES.TOTAL_CONFIRMED_KIDS)
-    )[0].total,
+    )[0]?.total,
 
     totalConfirmedAdults: (
       await GuestSchema.aggregate(GUEST_STATS_PIPELINES.TOTAL_CONFIRMED_ADULTS)
-    )[0].total,
+    )[0]?.total,
   };
 
   stats.totalAllocatedSeat += stats.totalInvitation;
