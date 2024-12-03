@@ -34,6 +34,9 @@ const GuestSchema = new mongoose.Schema(
         age: {
           type: Number,
         },
+        isPermanent: {
+          type: Boolean,
+        },
       },
     ],
     _totalAttendees: {

@@ -90,11 +90,12 @@ exports.getGuestsStats = async (req, res, next) => {
 
 exports.editGuest = async (req, res, next) => {
   var { id } = req.params;
-  var { name, allowedPlusses } = req.body;
+  var { name, allowedPlusses, plusses } = req.body;
   var guest = await GuestSchema.findById(id);
 
   guest.name = name;
   guest.allowedPlusses = allowedPlusses;
+  guest.plusses = plusses;
   // console.log(guest);
 
   guest = await guest.save();
