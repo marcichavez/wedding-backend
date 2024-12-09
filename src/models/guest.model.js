@@ -9,7 +9,7 @@ const GuestSchema = new mongoose.Schema(
     },
     email: {
       type: String,
-      validate: [validator.isEmail, "Please provide a valid email"],
+      // validate: [validator.isEmail, "Please provide a valid email"],
     },
     name: {
       type: String,
