@@ -3,6 +3,10 @@ const validator = require("validator");
 
 const GuestSchema = new mongoose.Schema(
   {
+    invitationSent: {
+      type: Boolean,
+      default: false,
+    },
     mobileNumber: {
       type: String,
       trim: true,
