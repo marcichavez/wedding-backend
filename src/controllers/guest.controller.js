@@ -163,3 +163,15 @@ exports.deleteGuest = async (req, res, next) => {
     },
   });
 };
+
+exports.invitationSentToGuest = async (req, res, next) => {
+  var { id, isSent } = req.params;
+  var guest = await GuestSchema.findById(id);
+  guest.invitationSent = isSent;
+  res.status(200).json({
+    status: "success",
+    env: {
+      guest,
+    },
+  });
+};
