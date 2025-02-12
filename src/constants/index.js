@@ -56,6 +56,11 @@ exports.GUEST_STATS_PIPELINES = {
   ],
   TOTAL_ALLOCATED_SEATS: [
     {
+      $match: {
+        isAttending: {
+          $ne: "No",
+        },
+      },
       $group: {
         _id: null,
         total: {
