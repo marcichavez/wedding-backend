@@ -61,6 +61,8 @@ exports.GUEST_STATS_PIPELINES = {
           $ne: "No",
         },
       },
+    },
+    {
       $group: {
         _id: null,
         total: {
