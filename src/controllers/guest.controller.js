@@ -93,7 +93,8 @@ exports.getGuestsStats = async (req, res, next) => {
       )[0]?.total || 0,
   };
 
-  stats.totalAllocatedSeat += stats.totalInvitation;
+  stats.totalAllocatedSeat +=
+    stats.totalInvitation - stats.totalNegativeResponse;
 
   res.status(200).json({
     status: "success",
